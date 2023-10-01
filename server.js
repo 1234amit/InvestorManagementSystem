@@ -11,7 +11,8 @@ import viewUsersSchema from './routes/viewUsersSchema.js';
 import allUsersSchema from './routes/allUsersSchema.js';
 import updateUsersSchema from './routes/updateUsersSchema.js';
 import viewSingleUserRoute from './routes/viewSingleUserRoute.js';
-const path = require("path");
+import path from "path";
+
 
 // configure dotenv
 dotenv.config();
