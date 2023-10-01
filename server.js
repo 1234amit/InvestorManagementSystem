@@ -39,10 +39,16 @@ app.use("/api/v1/update_users_schema", updateUsersSchema);
 app.use("/api/v1/viewSingleUser", viewSingleUserRoute);
 
 //static files
-app.use(express.static(path.join(__dirname, "./client/build")));
+// app.use(express.static(path.join(__dirname, "./client/build")));
+
+// app.get("*", function (req, res) {
+//     res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
+
+app.use(express.static(path.join(new URL(import.meta.url).pathname, "./client/build")));
 
 app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+    res.sendFile(path.join(new URL(import.meta.url).pathname, "./client/build/index.html"));
 });
 
 
